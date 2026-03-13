@@ -1,7 +1,10 @@
 {
+  "react-native-google-mobile-ads": {
+    "ios_app_id": "ca-app-pub-6737818747220655~8216437602"
+  },
   "expo": {
-    "name": "cat-app-temp",
-    "slug": "cat-app-temp",
+    "name": "Cat Toy Box",
+    "slug": "cat-toy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,10 +12,19 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1a1a2e"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.atukuri.cattoy",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSUserTrackingUsageDescription": "This allows us to show you relevant ads.",
+        "SKAdNetworkItems": [
+          { "SKAdNetworkIdentifier": "cstr6suwn9.skadnetwork" }
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +33,27 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.atukuri.cattoy"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "scheme": "cattoy",
+    "plugins": [
+      "expo-secure-store",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "iosAppId": "ca-app-pub-6737818747220655~8216437602"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "460dba5a-a445-4e35-a8a9-e8c0ede99092"
+      }
+    },
+    "owner": "atukuri"
   }
 }

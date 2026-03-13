@@ -1,0 +1,20 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Upload metadata to App Store Connect"
+  lane :upload_metadata do
+    deliver(
+      app_identifier: "com.atukuri.cattoy",
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      force: true,
+      automatic_release: false,
+      submit_for_review: false,
+      precheck_include_in_app_purchases: false,
+      team_id: "5JD43MT82D",
+      skip_app_version_update: false,
+      edit_live: false,
+      app_review_information: {}
+    )
+  end
+end
